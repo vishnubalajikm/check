@@ -40,8 +40,7 @@ Boards.attachSchema(new SimpleSchema({
   'labels.$.color': {
     type: String,
     allowedValues: [
-      'green', 'yellow', 'orange', 'red', 'purple',
-      'blue', 'sky', 'lime', 'pink', 'black',
+      'green', 'yellow', 'red', 'blue',
     ],
   },
   // XXX We might want to maintain more informations under the member sub-

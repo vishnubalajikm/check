@@ -4,7 +4,7 @@ template(name="boardHeaderBar")
       a(class="{{#if currentUser.isBoardAdmin}}js-edit-board-title{{else}}is-disabled{{/if}}")
         = title
 
-  
+
   .board-header-btns.right
     if currentBoard
       if isMiniScreen
@@ -32,7 +32,7 @@ template(name="boardHeaderBar")
               if $eq watchLevel "muted"
                 i.fa.fa-bell-slash
               span {{_ watchLevel}}
-  
+
           else
             a.board-header-btn.js-log-in(
               title="{{_ 'log-in'}}")
@@ -59,7 +59,7 @@ template(name="boardHeaderBar")
             i.fa.fa-times-thin
 
       .separator
-      a.board-header-btn.js-open-board-menu
+      a.board-header-btn.js-open-board-menu.hide
         i.board-header-btn-icon.fa.fa-navicon
 
 template(name="boardMenuPopup")
