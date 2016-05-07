@@ -1,5 +1,15 @@
 @import 'nib'
 
+.card-btn
+  background-image: none !important
+  background-color: #5D8376 !important
+  padding: 6px 18px
+  height: auto
+  font-size: 13px
+  font-weight: 400
+  box-shadow: none !important
+  letter-spacing: 1px
+
 .card-details
   padding: 0 20px
   height: 100%
@@ -7,20 +17,32 @@
   flex-basis: 600px
   will-change: flex-basis
   overflow: hidden
-  background: darken(white, 3%)
+  background: #ffffff
   border-radius: bottom 3px
   z-index: 20 !important
   animation: flexGrowIn 0.1s
   box-shadow: 0 0 7px 0 darken(white, 30%)
   transition: flex-basis 0.1s
 
+  .add-controls
+    .card-btn
+      margin-top: 5px
+
   .card-details-canvas
     width: 600px
+    h2
+      font-size:16px
+      margin-bottom:20px
+    .js-open-inlined-form
+      font-size:14px
+      vertical-align:middle
+      i
+        color: #848484
+      &:hover
+        color: #333
 
   .card-details-header
-    margin: 0 -20px 5px
-    padding 7px 16px
-    background: darken(white, 7%)
+    padding 15px 0
     border-bottom: 1px solid darken(white, 14%)
 
     .close-card-details,
@@ -31,10 +53,13 @@
       font-size: 24px
       padding: 5px
       margin-right: -8px
+      line-height: 0
+      margin-top: 3px
 
     .card-details-menu
       font-size: 17px
       padding: 10px
+      line-height: 0
 
     .card-details-watch
       font-size: 17px
@@ -42,9 +67,8 @@
       color: #a6a6a6
 
     .card-details-title
-      font-weight: bold
       font-size: 1.33em
-      margin: 7px 0 0
+      margin: 0
       padding: 0
 
 
@@ -67,6 +91,8 @@
 
   .card-description textarea
     min-height: 100px
+    &:focus
+      border: 1px solid #333
 
   .card-details-items
     display: flex
@@ -80,14 +106,27 @@
 
   .card-details-item-title
     font-size: 14px
-    color: darken(white, 45%)
+    color: #333
+    margin-right: 10px
+    &.inline
+      display: inline-block
 
   .card-label
     padding-top: 5px
     padding-bottom: 5px
+    font-weight: 400;
+    opacity: 0.2
+    &.active
+      border: 1px solid #333
+      opacity: 1
 
   .activities
     padding-top: 10px
+    textarea
+      min-height: 45px !important;
+      height: auto !important;
+      padding-bottom: 0 !important;
+
 
 input[type="text"].attachment-add-link-input
   float: left

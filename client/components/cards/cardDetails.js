@@ -28,6 +28,28 @@ BlazeComponent.extendComponent({
     return card.findWatcher(Meteor.userId());
   },
 
+  boardLables() {
+    const board = Boards.findOne(Session.get('currentBoard'))
+    return board.labels
+  },
+  storeSelectedLabel(labels) {
+    Session.set("xlabel",labels[0]);
+  },
+
+  checkLabel(labelId,selectedId) {
+    console.log("Label Id",labelId);
+    var card = Cards.findOne(Session.get("currentCard"));
+    console.log(card);
+    
+      if(labelId === card.labelIds[0]) {
+        return "active";
+      } 
+
+    
+    return "";
+    
+  },
+
   scrollParentContainer() {
     const cardPanelWidth = 510;
     const bodyBoardComponent = this.parentComponent();
@@ -88,6 +110,14 @@ BlazeComponent.extendComponent({
       'click .js-member': Popup.open('cardMember'),
       'click .js-add-members': Popup.open('cardMembers'),
       'click .js-add-labels': Popup.open('cardLabels'),
+      'click .js-select-label'(evt) {
+        $('.js-select-label').removeClass('active');
+        $(evt.currentTarget).addClass('active');
+        const card = Cards.findOne(Session.get('currentCard'));
+        const labelId = $(evt.currentTarget).data('labelId');
+        card.toggleLabel(labelId);
+        evt.preventDefault();
+      },
       'mouseenter .js-card-details'() {
         this.parentComponent().showOverlay.set(true);
         this.parentComponent().mouseHasEnterCardDetails = true;

@@ -109,7 +109,7 @@ template(name="cardActivities")
             +editor(autofocus=true)
               = comment.text
             .edit-controls
-              button.primary(type="submit") {{_ 'edit'}}
+              button.primary.card-btn(type="submit") Update
           else
             .activity-comment
               +viewer
@@ -117,9 +117,11 @@ template(name="cardActivities")
             span(title=createdAt).activity-meta {{ moment createdAt }}
               if ($eq currentUser._id comment.userId)
                 = ' - '
-                a.js-open-inlined-form {{_ "edit"}}
+                a.js-open-inlined-form
+                  i.fa.fa-edit
                 = ' - '
-                a.js-delete-comment {{_ "delete"}}
+                a.js-delete-comment
+                  i.fa.fa-trash
 
         else
           span(title=createdAt).activity-meta {{ moment createdAt }}

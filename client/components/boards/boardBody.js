@@ -49,6 +49,7 @@ BlazeComponent.extendComponent({
 
   currentCardIsInThisList() {
     const currentCard = Cards.findOne(Session.get('currentCard'));
+    
     const listId = this.currentData()._id;
     return currentCard && currentCard.listId === listId;
   },

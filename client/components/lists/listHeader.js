@@ -15,9 +15,24 @@ BlazeComponent.extendComponent({
 
   events() {
     return [{
-      'click .js-open-list-menu': Popup.open('listAction'),
-      submit: this.editTitle,
-    }];
+        'click .js-open-list-menu': Popup.open('listAction'),
+        submit: this.editTitle,
+      },
+      {
+        'click .js-min-list'(evt) {
+          $(evt.currentTarget).addClass('hide');
+          $(evt.currentTarget).siblings('.js-max-list').removeClass('hide');
+          $(evt.currentTarget).parents('.list').addClass('min')
+        }
+      },
+      {
+        'click .js-max-list'(evt) {
+          $(evt.currentTarget).addClass('hide');
+          $(evt.currentTarget).siblings('.js-min-list').removeClass('hide');
+          $(evt.currentTarget).parents('.list').removeClass('min')
+        }
+      }
+    ];
   },
 }).register('listHeader');
 
