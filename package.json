@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run --silent lint",
-    "meteor": "MONGO_URL=mongodb://127.0.0.1:27017/meteor meteor"
+    "meteor": "MONGO_URL=mongodb://cskmanager:cskmanager@ds011482.mlab.com:11482/cskmanager meteor"
   },
   "repository": {
     "type": "git",
