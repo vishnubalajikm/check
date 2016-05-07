@@ -42,7 +42,12 @@ Template.createLabelPopup.helpers({
 Template.cardLabelsPopup.events({
   'click .js-select-label'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
+
+    console.log(Session.get('currentCard'));
+    console.log(card);
     const labelId = this._id;
+    console.log(this);
+    console.log(labelId)
     card.toggleLabel(labelId);
     evt.preventDefault();
   },

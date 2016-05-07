@@ -3,13 +3,19 @@ template(name="listHeader")
     +inlinedForm
       +editListTitleForm
     else
+      a.list-header-menu-icon-left.fa.fa-navicon.js-open-list-menu
       h2.list-header-name(
         class="{{#if currentUser.isBoardMember}}js-open-inlined-form is-editable{{/if}}")
         = title
       if currentUser.isBoardMember
         if isWatching
           i.list-header-watch-icon.fa.fa-eye
-        a.list-header-menu-icon.fa.fa-navicon.js-open-list-menu
+        a.list-header-menu-icon.js-min-list(href="#")
+          i.fa.fa-angle-right
+          i.fa.fa-angle-left
+        a.list-header-menu-icon.hide.js-max-list(href="#")
+          i.fa.fa-angle-left
+          i.fa.fa-angle-right
 
 template(name="editListTitleForm")
   .list-composer

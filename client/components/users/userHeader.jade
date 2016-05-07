@@ -3,10 +3,6 @@ template(name="headerUserBar")
     a.header-user-bar-name.js-open-header-member-menu
       .header-user-bar-avatar
         +userAvatar(userId=currentUser._id)
-      if currentUser.profile.fullname
-        = currentUser.profile.fullname
-      else
-        = currentUser.username
 
 template(name="memberMenuPopup")
   ul.pop-over-list
@@ -14,8 +10,8 @@ template(name="memberMenuPopup")
       li: a.js-edit-profile {{_ 'edit-profile'}}
     li: a.js-change-avatar {{_ 'edit-avatar'}}
     li: a.js-change-password {{_ 'changePasswordPopup-title'}}
-    li: a.js-change-language {{_ 'changeLanguagePopup-title'}}
-    li: a.js-edit-notification {{_ 'editNotificationPopup-title'}}
+    //li: a.js-change-language {{_ 'changeLanguagePopup-title'}}
+    //li: a.js-edit-notification {{_ 'editNotificationPopup-title'}}
   hr
   ul.pop-over-list
     li: a.js-logout {{_ 'log-out'}}
