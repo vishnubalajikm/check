@@ -1,0 +1,29 @@
+template(name="minicard")
+  .minicard
+    if cover
+      .minicard-cover
+        img(src="{{pathFor cover.url}}")
+    if labels
+      .minicard-labels
+        each labels
+          .avatar-wrapper
+            a(href="#")
+              img(src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="Not assigned" class="avatar")
+              .minicard-label(class="card-label-{{color}}" title="{{name}}")
+    .minicard-title= title
+    if members
+      .minicard-members.js-minicard-members
+        each members
+          +userAvatar(userId=this)
+    .badges
+      if comments.count
+        .badge(title="{{_ 'card-comments-title' comments.count }}")
+          span.badge-icon.fa.fa-comment-o
+          span.badge-text= comments.count
+      if description
+        .badge.badge-state-image-only(title=description)
+          span.badge-icon.fa.fa-align-left
+      if attachments.count
+        .badge
+          span.badge-icon.fa.fa-paperclip
+          span.badge-text= attachments.count
