@@ -1,8 +1,7 @@
 {
-  "name": "Wekan",
+  "name": "CSK-MANAGER",
   "version": "0.10.1",
-  "description": "The open-source Trello-like kanban",
-  "private": true,
+  "description": "CSK-MANAGER",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run --silent lint",
@@ -10,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wekan/wekan.git"
+    "url": ""
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wekan/wekan/issues"
+    "url": ""
   },
-  "homepage": "https://wekan.io",
+  "homepage": "",
   "devDependencies": {
     "eslint": "^2.0.0"
   }
