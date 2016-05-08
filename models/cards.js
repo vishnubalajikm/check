@@ -158,11 +158,16 @@ Cards.mutations({
   },
 
   toggleLabel(labelId) {
-    if (this.labelIds && this.labelIds.indexOf(labelId) > -1) {
-      return this.removeLabel(labelId);
-    } else {
+
+    this.labelIds = [];
       return this.addLabel(labelId);
-    }
+      
+    // if (this.labelIds && this.labelIds.indexOf(labelId) > -1) {
+    //   return this.removeLabel(labelId);
+    // } else {
+    //   this.labelIds = [];
+    //   return this.addLabel(labelId);
+    // }
   },
 
   assignMember(memberId) {

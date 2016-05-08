@@ -7,7 +7,7 @@ Categories.attachSchema(new SimpleSchema({
     categories: {
         type: [String]
     }
-});
+}));
 
 var categories = [
     { 

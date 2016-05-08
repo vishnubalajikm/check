@@ -1,14 +1,7 @@
 {
-<<<<<<< HEAD
-  "name": "CSK",
-  "version": "0.10.1",
-  "description": "CSK",
-  "private": true,
-=======
   "name": "CSK-MANAGER",
   "version": "0.10.1",
   "description": "CSK-MANAGER",
->>>>>>> origin/master
   "scripts": {
     "lint": "eslint .",
     "test": "npm run --silent lint",
