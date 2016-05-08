@@ -1,5 +1,5 @@
 head
-  title Wekan
+  title Customer Support Q(k)ueue Manager
   meta(name="viewport"
    content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0")
   //- XXX We should use pathFor in the following `href` to support the case
@@ -10,11 +10,10 @@ head
 
 template(name="userFormsLayout")
   section.auth-layout
-    h1.at-form-landing-logo
-      img(src="{{pathFor '/wekan-logo.png'}}" alt="Wekan")
+    h1.at-form-landing-logo.hide
     section.auth-dialog
       +Template.dynamic(template=content)
-      div.at-form-lang
+      div.at-form-lang.hide
         select.select-lang.js-userform-set-language
           each languages
             if isCurrentLanguage
